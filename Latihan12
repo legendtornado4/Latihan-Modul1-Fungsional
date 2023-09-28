@@ -1,0 +1,27 @@
+# data list campuran
+random_list = [105, 3.1, "Hello", 737, "Python", 2.7, "World", 412, 5.5, "AI"]
+
+#Inisialisasi struktur data ayng akan digunakan
+int_data = {}
+float_data = ()
+string_data = []
+
+# Iterasi melalui list campuran
+for item in random_list:
+    if isinstance(item, int):
+        # Jika item adalah int, pisahkan angka satuan, puluhan, dan ratusan
+        angka_satuan = item % 10
+        angka_puluhan = (item // 10) % 10
+        angka_ratusan = item // 100
+        int_data[item] = (angka_ratusan, angka_puluhan, angka_satuan)
+    elif isinstance(item, float):
+        # Jika item adalah float, tambahkan ke tuple float_data
+        float_data += (item,)
+    elif isinstance(item, str):
+        # Jika item adalah string, tambahkan ke list string_data
+        string_data.append(item)
+
+# Cetak hasil
+print("Data integer (dalam dictionary):", int_data)
+print("Data float (dalam tuple):", float_data)
+print("Data string (dalam list):", string_data)
